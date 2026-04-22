@@ -25,11 +25,11 @@ const PROJECTS = [
 
 const BOOT_LINES = [
   { text: '> Starting von.system v2.0.1', cls: 'hl' },
-  { text: '> Loading modules: HTML CSS JS PHP C# Luau Python', cls: 'dim' },
+  { text: '> Loading Languages: HTML CSS JS PHP C# Luau Python', cls: 'dim' },
   { text: '> Connecting repositories...', cls: 'dim' },
   { text: '> Establishing secure connection...', cls: 'dim' },
-  { text: '> Identity verified', cls: 'dim' },
-  { text: '> System ready', cls: 'hl' },
+  { text: '> Verifying System...', cls: 'dim' },
+  { text: '> System ready.', cls: 'hl' },
 ];
 
 function runBoot() {
