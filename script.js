@@ -24,7 +24,7 @@ const PROJECTS = [
 
 
 const BOOT_LINES = [
-  { text: '> Starting von.system v2.0.1', cls: 'hl' },
+  { text: '> Starting Website.....', cls: 'hl' },
   { text: '> Loading Languages: HTML CSS JS PHP C# Luau Python', cls: 'dim' },
   { text: '> Connecting repositories...', cls: 'dim' },
   { text: '> Establishing secure connection...', cls: 'dim' },
