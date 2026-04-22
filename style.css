@@ -18,6 +18,10 @@
     --transition: cubic-bezier(0.23, 1, 0.32, 1);
   }
 
+*{
+    cursor: none !important;
+}
+
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
 
