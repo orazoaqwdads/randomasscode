@@ -1,16 +1,16 @@
 const SKILLS = [
-  { name: 'HTML', icon: 'code-2', level: 0.97 },
-  { name: 'CSS', icon: 'palette', level: 0.95 },
-  { name: 'JavaScript', icon: 'braces', level: 0.93 },
-  { name: 'PHP', icon: 'server', level: 0.85 },
-  { name: 'C#', icon: 'cpu', level: 0.88 },
-  { name: 'Luau', icon: 'gamepad-2', level: 0.9 },
-  { name: 'Python', icon: 'terminal-square', level: 0.87 },
-  { name: 'UI/UX Design', icon: 'layout-dashboard', level: 0.91 },
-  { name: 'Systems Design', icon: 'workflow', level: 0.89 },
-  { name: 'Game Dev', icon: 'gamepad-2', level: 0.86 },
-  { name: 'Backend Dev', icon: 'database', level: 0.84 },
-  { name: 'Web APIs', icon: 'plug', level: 0.9 },
+  { name: 'HTML', icon: 'code-2', level: 0.99 },
+  { name: 'CSS', icon: 'palette', level: 1 },
+  { name: 'JavaScript', icon: 'braces', level: 0.69 },
+  { name: 'PHP', icon: 'server', level: 0.42 },
+  { name: 'C#', icon: 'cpu', level: 0.66 },
+  { name: 'Luau', icon: 'gamepad-2', level: 1 },
+  { name: 'Python', icon: 'terminal-square', level: 1 },
+  { name: 'UI/UX Scripting', icon: 'layout-dashboard', level: 0.93 },
+  { name: 'Systems Design', icon: 'workflow', level: 0.82 },
+  { name: 'Game Dev', icon: 'gamepad-2', level: 0.98 },
+  { name: 'Backend Dev', icon: 'database', level: 0.75 },
+  { name: 'Web APIs', icon: 'plug', level: 0.72 },
 ];
 
 const PROJECTS = [
