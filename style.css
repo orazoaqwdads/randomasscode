@@ -1,4 +1,6 @@
-  :root {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
     --bg: #000000;
     --bg2: #080c0e;
     --bg3: #0d1418;
@@ -17,10 +19,6 @@
     --font-body: -apple-system, 'Helvetica Neue', sans-serif;
     --transition: cubic-bezier(0.23, 1, 0.32, 1);
   }
-
-*{
-    cursor: none !important;
-}
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -142,22 +140,49 @@
     font-size: 0.65rem; letter-spacing: 0.5em; text-transform: uppercase;
     color: var(--cyan); opacity: 0.6; margin-bottom: 28px;
   }
-  .hero-name {
-    font-family: var(--font-display);
-    font-size: clamp(5rem, 22vw, 18rem);
-    font-weight: 900; line-height: 0.85;
-    letter-spacing: -0.02em;
-    color: transparent;
-    -webkit-text-stroke: 1.5px rgba(255,255,255,0.7);
-    position: relative; display: inline-block;
-  }
-  .hero-name .fill {
-    position: absolute; inset: 0;
-    background: linear-gradient(135deg, var(--white) 20%, var(--cyan) 60%, rgba(0,200,212,0.7));
-    -webkit-background-clip: text; background-clip: text;
-    -webkit-text-fill-color: transparent;
-    opacity: 0; transition: opacity 1.4s 0.4s;
-  }
+
+
+.hero-name {
+  display: inline-block;
+  position: relative;
+  overflow: visible;
+
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+
+  font-size: clamp(4rem, 17vw, 12rem);
+
+  line-height: 1;
+  letter-spacing: -0.03em;
+
+  color: transparent;
+  -webkit-text-stroke: 1.2px rgba(255,255,255,0.35);
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+
+.hero-name .fill {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    135deg,
+    var(--white) 20%,
+    var(--cyan) 60%,
+    rgba(0,200,212,0.7)
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+ 
+
   .hero-name.loaded .fill { opacity: 1; }
   .hero-tagline {
     margin-top: 28px;
@@ -166,6 +191,10 @@
     color: rgba(255,255,255,0.38);
     min-height: 2em;
   }
+
+
+
+  
   .hero-tagline .cursor-blink {
     display: inline-block; width: 2px; height: 1em;
     background: var(--cyan); margin-left: 2px;
@@ -584,17 +613,36 @@
   ::-webkit-scrollbar-track { background: var(--bg); }
   ::-webkit-scrollbar-thumb { background: rgba(0,245,255,0.4); }
 
-  @media (max-width: 768px) {
-    nav { padding: 16px 24px; }
-    .nav-links { display: none; }
-    .nav-hamburger { display: flex; }
-    #about { grid-template-columns: 1fr; padding: 80px 24px; gap: 60px; }
-    #skills { padding: 80px 24px; }
-    #projects { padding: 80px 24px; }
-    .projects-grid { grid-template-columns: 1fr; }
-    #contact { padding: 80px 24px 100px; }
-    .form-row { grid-template-columns: 1fr; }
-    footer { flex-direction: column; text-align: center; padding: 28px 24px; }
-    .about-stats { grid-template-columns: 1fr 1fr; }
-    .profile-frame { width: 200px; }
+@media (hover: hover) and (pointer: fine) {
+  * {
+    cursor: none;
   }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  * {
+    cursor: auto !important;
+  }
+
+  #cursor,
+  #cursor-trail {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display:flex; flex-direction:column; position:absolute; top:64px; left:0; right:0; width:100%; background:rgba(0,0,0,0.95); backdrop-filter:blur(20px); border-bottom:1px solid rgba(255,255,255,0.06); padding:18px 0; gap:18px; transform:translateY(-20px); opacity:0; pointer-events:none; transition:0.3s ease; align-items:center; }
+  .nav-links.open { transform:translateY(0); opacity:1; pointer-events:auto; }
+  .nav-links a { color:var(--cyan); font-size:0.8rem; letter-spacing:0.2em; text-align:center; }
+  .nav-links a:hover { color:#fff; text-shadow:0 0 12px rgba(0,245,255,0.6); }
+  .nav-hamburger { display:flex; }
+  #about { grid-template-columns:1fr; padding:80px 24px; gap:60px; }
+  #skills { padding:80px 24px; }
+  #projects { padding:80px 24px; }
+  .projects-grid { grid-template-columns:1fr; }
+  #contact { padding:80px 24px 100px; }
+  .form-row { grid-template-columns:1fr; }
+  footer { flex-direction:column; text-align:center; padding:28px 24px; }
+  .about-stats { grid-template-columns:1fr 1fr; }
+  .profile-frame { width:200px; }
+}
