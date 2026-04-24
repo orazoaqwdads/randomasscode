@@ -63,6 +63,26 @@ const PHRASES = [
   'From web to game engine.',
 ];
 
+function initHamburger() {
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  const links = document.querySelectorAll('.nav-links a');
+
+  function toggleMenu() {
+    navLinks.classList.toggle('open');
+    hamburger.classList.toggle('active');
+  }
+
+  hamburger.addEventListener('click', toggleMenu);
+
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      hamburger.classList.remove('active');
+    });
+  });
+}
+
 function startTyping() {
   const el = document.getElementById('typed-text');
   let phraseIdx = 0, charIdx = 0, deleting = false;
@@ -341,6 +361,8 @@ function initForm() {
 }
 
 
+
+
 document.addEventListener('DOMContentLoaded', () => {
   buildSkills();
   buildProjects();
@@ -350,4 +372,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initRipples();
   initForm();
   runBoot();
+  initHamburger();
 });
