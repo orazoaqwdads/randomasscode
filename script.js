@@ -1,3 +1,11 @@
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href'))
+      ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
 const SKILLS = [
   { name: 'HTML', icon: 'code-2', level: 0.99 },
   { name: 'CSS', icon: 'palette', level: 1 },
