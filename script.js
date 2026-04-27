@@ -14,14 +14,19 @@ const SKILLS = [
 ];
 
 const PROJECTS = [
-  { num: '01', title: 'Coming soon', glyph: 'WI', desc: 'Coming soon.', tags: [] },
-  { num: '02', title: 'Coming soon', glyph: 'RG', desc: 'Coming soon.', tags: [] },
-  { num: '03', title: 'Coming soon', glyph: 'CD', desc: 'Coming soon.', tags: [] },
-  { num: '04', title: 'Coming soon', glyph: 'PY', desc: 'Coming soon.', tags: [] },
-  { num: '05', title: 'Coming soon', glyph: 'CM', desc: 'Coming soon.', tags: [] },
-  { num: '06', title: 'Coming soon', glyph: 'AE', desc: 'Coming soon.', tags: [] },
+  { num: "01", title: "Awskiller Portfolio Website", glyph: "", link: "https://awskiller100.github.io/", img:"images/awskiller10.png", desc: "A clean, responsive portfolio website designed to showcase projects with modern UI, smooth layout, and strong visual structure.", tags: ["UI/UX", "Frontend", "Responsive"] },
+  { num: '02', title: 'Coming soon', glyph: 'RG', link: '', desc: 'Coming soon.', tags: [] },
+  { num: '03', title: 'Coming soon', glyph: 'CD', link: '', desc: 'Coming soon.', tags: [] },
+  { num: '04', title: 'Coming soon', glyph: 'PY', link: '', desc: 'Coming soon.', tags: [] },
+  { num: '05', title: 'Coming soon', glyph: 'CM', link: '', desc: 'Coming soon.', tags: [] },
+  { num: '06', title: 'Coming soon', glyph: 'AE', link: '', desc: 'Coming soon.', tags: [] },
+  { num: '07', title: 'Coming soon', glyph: 'P7', link: '', img: '', desc: 'Coming soon.', tags: [] },
+  { num: '08', title: 'Coming soon', glyph: 'P8', link: '', img: '', desc: 'Coming soon.', tags: [] },
+  { num: '09', title: 'Coming soon', glyph: 'P9', link: '', img: '', desc: 'Coming soon.', tags: [] },
+  { num: '10', title: 'Coming soon', glyph: 'P0', link: '', img: '', desc: 'Coming soon.', tags: [] },
+  { num: '11', title: 'Coming soon', glyph: 'PA', link: '', img: '', desc: 'Coming soon.', tags: [] },
+  { num: '12', title: 'Coming soon', glyph: 'PB', link: '', img: '', desc: 'Coming soon.', tags: [] },
 ];
-
 
 const BOOT_LINES = [
   { text: '> Starting Website.....', cls: 'hl' },
@@ -241,11 +246,15 @@ function buildProjects() {
   PROJECTS.forEach((p, i) => {
     const div = document.createElement('div');
     div.className = 'project-card reveal';
+    if (i >= 6) { div.classList.add('extra'); div.style.display = 'none'; }
     div.style.transitionDelay = (i * 75) + 'ms';
+    div.style.cursor = p.link ? 'pointer' : 'default';
     div.innerHTML = `
       <div class="project-thumb">
+        <img src="${p.img || ''}" class="project-thumb-img" onerror="this.style.display='none'"/>
         <div class="project-thumb-glyph">${p.glyph}</div>
         <div class="project-thumb-line"></div>
+        <div class="project-thumb-hover">View Details</div>
       </div>
       <div class="project-body">
         <div class="project-num">PROJECT ${p.num}</div>
@@ -262,7 +271,22 @@ function buildProjects() {
       div.style.transform = `translateY(-8px) rotateX(${rx}deg) rotateY(${ry}deg)`;
     });
     div.addEventListener('mouseleave', () => { div.style.transform = ''; });
+    div.addEventListener('click', () => { if (p.link) window.open(p.link, '_blank'); });
     grid.appendChild(div);
+  });
+
+  const btn = document.createElement('button');
+  btn.className = 'btn btn-secondary view-more-btn';
+  btn.id = 'viewMoreBtn';
+  btn.textContent = 'View More';
+  btn.style.cssText = 'display:block;margin:40px auto 0';
+  grid.parentElement.appendChild(btn);
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.project-card.extra').forEach((c, i) => {
+      c.style.display = '';
+      setTimeout(() => c.classList.add('in-view'), i * 80);
+    });
+    btn.style.display = 'none';
   });
 }
 
