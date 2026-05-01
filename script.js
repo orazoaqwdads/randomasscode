@@ -9,7 +9,7 @@ const SKILLS = [
   { name: 'C#', icon: 'cpu', fallback: 'C#', level: 0.66 },
   { name: 'Luau', icon: 'gamepad-2', fallback: 'LU', level: 1 },
   { name: 'Python', icon: 'terminal-square', fallback: 'PY', level: 1 },
-  { name: 'UI/UX Scripting', icon: 'layout-dashboard', fallback: 'UI', level: 0.93 },
+  { name: 'Swift', icon: 'smartphone', fallback: 'SW', level: 0.89 },
   { name: 'Systems Design', icon: 'workflow', fallback: 'SD', level: 0.82 },
   { name: 'Game Dev', icon: 'gamepad-2', fallback: 'GD', level: 0.98 },
   { name: 'Backend Dev', icon: 'database', fallback: 'BE', level: 0.75 },
