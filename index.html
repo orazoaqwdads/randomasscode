@@ -3,147 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-<link rel="icon" type="image/png" href="images/logo.png">
-<script src="https://unpkg.com/lucide@latest"></script>
-<title>von | Programmer</title>
+<title>Coming Soon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="noise"></div>
-<div class="scanline"></div>
-<div id="cursor"></div>
-<div id="cursor-trail"></div>
-<canvas id="bg-canvas"></canvas>
+<div class="bg-grid"></div>
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
 
-
-<nav>
-  <a class="nav-logo" href="#">VON_077</a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
-</nav>
-
-
-<section id="hero">
-  <div class="hero-kicker">Independent Programmer</div>
-  <div class="hero-name" id="heroName">VON<span class="fill">VON</span></div>
-  <div class="hero-tagline">
-    <span id="typed-text"></span><span class="cursor-blink"></span>
+<div class="container">
+  <p class="eyebrow">something big is coming</p>
+  <div class="main-text">
+    <span class="word word-coming">COMING</span>
+    <span class="word word-soon">SOON</span>
   </div>
-  <p class="hero-copy">I build sharp web experiences, game systems, and practical tools with clean code and a strong visual rhythm.</p>
-  <div class="hero-signals" aria-label="Primary areas">
-    <span>Web Interfaces</span>
-    <span>Game Systems</span>
-    <span>Automation</span>
-  </div>
-  <div class="hero-cta">
-    <a href="#projects" class="btn btn-primary" id="btn1">View Work</a>
-    <a href="#contact" class="btn btn-secondary" id="btn2">Contact</a>
-  </div>
-  <div class="hero-scroll">
-    <div class="scroll-arrow"></div>
-    <span>SCROLL</span>
-  </div>
-</section>
+  <div class="divider"></div>
+  <p class="subtitle">
+    will be ready shortly
+    <span class="dots">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </span>
+  </p>
+</div>
 
-
-<section id="about">
-  <div class="reveal-left">
-    <h2 class="about-heading">Building focused digital systems with a <span>future facing edge.</span></h2>
-    <p class="about-body">I work where design meets engineering across web, desktop, and game development. Interfaces should feel intentional, systems should be easy to trust, and every detail should earn its place.</p>
-    <p class="about-body">From frontends to server-side logic, from scripting game worlds in Luau to building tools in C#, I move across the stack with a clean, practical style.</p>
-    <div class="about-stats">
-      <div class="stat-card reveal"><span class="stat-num" data-count="7">0</span><span class="stat-label">Languages</span></div>
-      <div class="stat-card reveal"><span class="stat-num" data-count="40">0</span><span class="stat-label">Projects Shipped</span></div>
-      <div class="stat-card reveal"><span class="stat-num" data-count="5">0</span><span class="stat-label">Years Scripting</span></div>
-      <div class="stat-card reveal"><span class="stat-num" data-count="99">0</span><span class="stat-label">% Committed</span></div>
-    </div>
-  </div>
-  <div class="about-visual reveal-right">
-    <div class="profile-frame">
-      <div class="profile-glow"></div>
-      <div class="profile-ring"></div>
-      <div class="profile-ring-2"></div>
-      <div class="profile-hex-border"></div>
-      <div class="profile-hex-clip">
-        <img src="images/profile pic better.png" alt="Von" />
-      </div>
-      <div class="profile-name-badge">VON - PROGRAMMER</div>
-    </div>
-  </div>
-</section>
-
-
-<section id="skills">
-  <div class="section-header reveal">
-    <span class="section-tag">Capabilities</span>
-    <h2 class="section-title">Core <span>Languages</span></h2>
-  </div>
-  <div class="skills-grid" id="skills-grid"></div>
-</section>
-
-
-<section id="projects">
-  <div class="section-header reveal">
-    <span class="section-tag">Selected Work</span>
-    <h2 class="section-title">Selected <span>Projects</span></h2>
-  </div>
-  <div class="projects-grid" id="projects-grid"></div>
-</section>
-
-
-<section id="contact">
-  <div class="reveal">
-    <span class="section-tag">Contact</span>
-    <h2 class="section-title">Initiate <span>Contact</span></h2>
-    <p class="contact-sub">Have a project that needs a systems mind or a clean interface? Send the details and I will get back to you.</p>
-  </div>
-  <div class="contact-form reveal" id="contact-form-wrap">
-    <form id="contact-form" novalidate>
-      <div class="form-row">
-        <div class="form-group">
-          <label>Name</label>
-          <input type="text" class="form-input" placeholder="Your name" required>
-          <div class="input-line"></div>
-        </div>
-        <div class="form-group">
-          <label>Email</label>
-          <input type="email" class="form-input" placeholder="you@example.com" required>
-          <div class="input-line"></div>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Message</label>
-        <textarea class="form-input" rows="6" placeholder="Tell me what you want to build..." required></textarea>
-        <div class="input-line"></div>
-      </div>
-      <button type="submit" class="btn-submit" id="submit-btn">
-        <span class="btn-text">Send Message</span>
-        <span class="btn-loader"><div class="loader-dots"><span></span><span></span><span></span></div></span>
-      </button>
-    </form>
-    <div class="form-success" id="form-success">
-      <div class="success-icon">*</div>
-      <p class="success-msg">Email draft opened<br><small>I will reply as soon as I can.</small></p>
-    </div>
-  </div>
-</section>
-
-
-<footer>
-  <span>&copy; 2026 VON. All rights reserved.</span>
-  <div class="footer-socials">
-    <a href="https://discord.com/users/1266683724599136269">DISCORD</a>
-    <a href="https://www.roblox.com/users/3062169939/profile">ROBLOX</a>
-    <a href="mailto:von291507@gmail.com?subject=Hello&body=Hi there, I am interested in working with you. Please add me on Discord: <your discord user>">EMAIL ME</a>
-  </div>
-</footer>
-
-  <script src="script.js" defer></script>
 </body>
 </html>
